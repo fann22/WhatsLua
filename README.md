@@ -1,7 +1,12 @@
 # WhatsLua
 
-UNDER DEVELOPMENT.
-But the beta test has been published.
+UNDER BETA STATE.
+
+---
+
+Join our Discord server if you have any questions
+
+[![WhatsLua on Discord](https://img.shields.io/badge/Join%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/D6qwVdZKgc)
 
 ---
 
@@ -18,29 +23,29 @@ All of these globals are available inside your Lua scripts.
 # Table of Contents
 
 ### Core Context API
-- [GetChat](#1.-GetChat%28asJid%29--%3E-string)
-- [GetSender](#2.-GetSender%28asJid%29--%3E-string)
-- [GetMessageID](#3.-GetMessageID%28%29--%3E-string)
-- [GetText](#4.-GetText%28%29--%3E-string)
-- [GetArgs](#5.-GetArgs%28%29--%3E-table)
+- [GetChat()](#1-getchatasjid---string)
+- [GetSender()](#2-getsenderasjid---string)
+- [GetMessageID()](#3-getmessageid---string)
+- [GetText()](#4-gettext---string)
+- [GetArgs()](#5-getargs---table)
 
 ### Messaging API
-- [Reply](#6.-Reply%28text%2C-expiration%29)
-- [NewMessage](#16.-NewMessage%28%29--%3E-table)
-- [SendMessage](#17.-SendMessage%28msgTable%29)
+- [Reply()](#6-replytext-expiration)
+- [NewMessage()](#16-newmessage---table)
+- [SendMessage()](#17-sendmessagemsgtable)
 
 ### Logging & Utility API
-- [Log](#7.-Log%28msg%29)
-- [HasPrefix](#8.-HasPrefix%28str%2C-prefix%29--%3E-bool)
-- [HasSuffix](#9.-HasSuffix%28str%2C-suffix%29--%3E-bool)
-- [Find](#10.-Find%28str%2C-substr%29--%3E-bool)
-- [Split](#14.-Split%28str%2C-separator%29--%3E-table)
-- [Join](#15.-Join%28table%2C-joiner%29--%3E-string)
-- [Notify](#13.-Notify%28title%2C-body%2C-id%29)
+- [Log()](#7-logmsg)
+- [HasPrefix()](#8-hasprefixstr-prefix---bool)
+- [HasSuffix()](#9-hassuffixstr-suffix---bool)
+- [Find()](#10-findstr-substr---bool)
+- [Split()](#14-splitstr-separator---table)
+- [Join()](#15-jointable-joiner---string)
+- [Notify()](#13-notifytitle-body-id)
 
 ### HTTP API
-- [Http_Get](#11.-Http_Get%28url%29--%3E-resTable%2C-errString%7Cnil)
-- [Http_Post](#12.-Http_Post%28url%2C-body%29--%3E-resTable%2C-errString%7Cnil)
+- [Http_Get()](#11-http_geturl---restable-errstringnil)
+- [Http_Post()](#12-http_posturl-body---restable-errstringnil)
 
 ---
 
@@ -49,7 +54,7 @@ All of these globals are available inside your Lua scripts.
 This document describes the Lua API that’s registered by `registerLuaAPI`.  
 All of these globals are available inside your Lua scripts.
 
-%3E **Note**  
+> **Note**  
 > Some functions depend on an internal `currentCtx`.  
 > When there’s no active message context (`currentCtx == nil`), they either:
 > - return an empty string / empty table, or  
@@ -568,11 +573,3 @@ if HasPrefix(GetText(), "!whoami") then
   Reply(msg, false)
 end
 ```
-
----
-
-## License
-
-WhatsLua © 2025 Fann22  
-Released under the **GNU General Public License v3 (GPL-3.0)**.  
-See the `LICENSE` file for more information.
